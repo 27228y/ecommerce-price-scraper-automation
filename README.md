@@ -1,18 +1,10 @@
 # E-Commerce Catalog & Price Scraper
 
-A modular Python script that scrapes paginated e-commerce sites, extracts product and pricing data, cleans the raw text, and generates formatted Excel reports with conditional formatting.
+I built a Python script to automate extracting product data from an e-commerce catalog across multiple pages. Instead of clicking and copying data manually, the script visits each page, grabs the book titles and prices, and cleans up the text automatically.
 
-## Why This Matters
-Manual competitor price tracking is slow and prone to human error. This script automates the entire pipeline, turning multi-page archives into clean, structured spreadsheets in seconds.
-
-## Tech Stack
-* **Python 3**
-* **BeautifulSoup4 & Requests:** Handles HTTP requests and HTML parsing.
-* **Pandas:** Manages data structuring and data cleaning.
-* **OpenPyXL Engine:** Handles Excel generation, auto-adjusts column widths, and applies conditional formatting.
-
-## Key Features
-* **Built-in Rate Limiting:** Includes explicit delays (time.sleep) to respect target servers and avoid IP blocks.
-* **Data Sanitization:** Strips currency symbols and white spaces, converting raw text prices into clean numeric types (float).
-* **Auto-Fit Excel Columns:** Automatically adjusts column widths based on the longest string to prevent clipped data.
-* **Visual Price Alerts:** Highlights items priced under a specific threshold (e.g., £20.00) using OpenPyXL conditional formatting.
+How it works:
+- Uses Requests and BeautifulSoup to read the website's HTML code.
+- Automatically handles pagination to scrape all pages in one run.
+- Cleans text strings into numbers so they can be sorted.
+- Saves everything into Excel sheet using Pandas and OpenPyXL.
+- Automatically resizes columns and highlights books under £20 green
